@@ -1,0 +1,1 @@
+{"version":3,"sources":["TodoTemplate.js"],"names":["TodoTemplateBlock","styled","div"],"mappings":";;AAAA;;AACA;;;;;;;;;;;;;;;;AAEA,IAAMA,iBAAiB,GAAGC,6BAAOC,GAAV,mBAAvB","sourcesContent":["import React from \"react\";\nimport styled from \"styled-components\";\n\nconst TodoTemplateBlock = styled.div`\n  width: 512px\n`"],"file":"TodoTemplate.dev.js"}
