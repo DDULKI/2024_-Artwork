@@ -48,7 +48,35 @@ export function TodoProvider({children}) {
 
   return (
     <TodoStateContext.Provider value={state}>
-      <TodoDispatchContext.Provider value={dispatch}></TodoDispatchContext>
+      <TodoDispatchContext.Provider value={dispatch}>
+        <TodoNextIdContext.Provider value={nextId}>
+          {children}
+        </TodoNextIdContext.Provider>
+      </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
-  )
+  );
+}
+
+export function useTodoState() {
+  const context = useContext(TodoStateContext);
+  if(!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context;
+}
+
+export function useTodoDispatch() {
+  const context = useContext(TodoDispatchContext);
+  if (!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context; 
+}
+
+export function useTodoNextId() {
+  const context = useContext(TodoNextIdContext);
+  if(!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context; 
 }
